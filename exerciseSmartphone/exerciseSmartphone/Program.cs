@@ -10,7 +10,7 @@ namespace exerciseSmartphone
     {
         static void Main(string[] args)
         {
-            //List<Smartphone> (mockSmartphones)getsmartphones = new List<Smartphone>();
+             
             List<Smartphone> getMockSmartphones = GetMockSmartphones();
             bool existingBlackSmartphones = new ColorFilter().Filter(getMockSmartphones, "red");
             Console.WriteLine($"Smartphone black {existingBlackSmartphones}");
@@ -22,7 +22,7 @@ namespace exerciseSmartphone
 
             Console.WriteLine("Insert the maximum price of the Smartphone you want to pay for");
             string inputPrice = Console.ReadLine();
-            List<Smartphone> priceSpartphones = getMockSmartphones.Where(w => w.Price < Convert.ToDouble(inputPrice)).ToList();
+            List<Smartphone> priceSpartphones = getMockSmartphones.Where(w => w.Price <= Convert.ToDouble(inputPrice)).ToList();
             foreach (Smartphone item in priceSpartphones)
             {
                 Console.WriteLine($"The Smartphones you can afford are: {item.Model}, {item.Price}, {item.Version}, {item.Color} ");
