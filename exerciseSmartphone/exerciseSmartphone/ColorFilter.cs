@@ -10,7 +10,8 @@ namespace exerciseSmartphone
     {
         public bool Filter(IList<Smartphone> list, string input)
         {
-           var res = list.Where(w => w.Color == input).ToList();
+            //dynamic res1 = list.Where(w => w.Color == input).ToList();
+            var res = list.Where(w => w.Color == input).ToList();
             if (res != null && res.Count > 0)
             {
                 return true;
