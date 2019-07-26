@@ -1,0 +1,54 @@
+﻿@model List<SuperheroRowViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+
+    String color = "black";
+    if (TempData["MessageSeverity"] != null)
+    {
+        var severity = (MessageSeverity)TempData["MessageSeverity"];
+        switch (severity)
+        {
+            case MessageSeverity.Ok: color = "green"; break;
+            case MessageSeverity.Warning: color = "orange"; break;
+            case MessageSeverity.Error: color = "red"; break;
+        }
+    }
+}
+
+<h2 class="text-center">Superhero list</h2>
+
+@if (ViewData["Initial message"] != null)
+{
+    <h3>@ViewData["Initial message"]</h3>
+}
+
+@if(TempData["MessageText"] != null)
+{
+    <p id="feedback-message" style="color: @color;">@TempData["MessageText"]</p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>strength</th>
+            <th>enemies</th>
+            <th colspan="2">&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var superhero in Model)
+        {
+            <tr>
+                <td>@superhero.Name</td>
+                <td>@superhero.Strength</td>
+                <td>@superhero.EnemiesCount</td>
+                <td><a asp-controller="Superheroes" asp-action="Edit" asp-route-id="@superhero.Id">edit</a></td>
+                <td><a asp-controller="Superheroes" asp-action="Delete" asp-route-id="@superhero.Id" class="text-danger">delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-primary" asp-controller="Superheroes" asp-action="Add">Add Superhero</a>
