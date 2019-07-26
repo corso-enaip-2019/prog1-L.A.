@@ -1,0 +1,60 @@
+﻿@model SuperheroEditViewModel
+@{
+    var enemiesList = (IEnumerable<SelectListItem>)ViewData["enemies"];
+}
+<div class="centered">
+
+
+<h2>Edit superhero</h2>
+
+    <form method="post" class="divFixed">
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <label asp-for="HeroName">hero name:</label>
+                <input asp-for="HeroName" class="form-control" />
+                <span class="validation" asp-validation-for="HeroName"></span>
+            </div>
+            <div class="form-group col-sm-6">
+                <label asp-for="SecretName">secret name:</label>
+                <input asp-for="SecretName" class="form-control" />
+                <span  class="validation" asp-validation-for="SecretName"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label asp-for="Strength">strength:</label>
+                <input asp-for="Strength" class="form-control" type="number" />
+                <span class="validation"asp-validation-for="Strength"></span>
+            </div>
+            <div class="form-group col-sm-4">
+                <label asp-for="AssetsValue">assets value:</label>
+                <input asp-for="AssetsValue" class="form-control" type="number" step="0.01" />
+                <span class="validation" asp-validation-for="AssetsValue"></span>
+            </div>
+            <div class="form-group col-sm-4">
+                <label asp-for="CanFly">can fly:</label>
+                <input asp-for="CanFly" type="checkbox" />
+                <span class="validation" asp-validation-for="CanFly"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <label asp-for="Powers">powers:</label>
+                <textarea asp-for="Powers" class="form-control"></textarea>
+                <span class="validation" asp-validation-for="Powers"></span>
+            </div>
+            <div class="form-group col-sm-6">
+                <label asp-for="EnemiesIds">enemies:</label>
+                <select class="form-control" multiple
+                        asp-for="EnemiesIds"
+                        asp-items="enemiesList"></select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-12">
+                <a asp-controller="Superheroes" asp-action="Index" class="btn btn-default">Undo</a>
+                <input type="submit" class="btn btn-primary" value="Save" />
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,54 @@
+﻿@model List<VillainRowViewModel>
+
+@{
+    String color = "black";
+    if (TempData["MessageSeverity"] != null)
+    {
+        var severity = (MessageSeverity)TempData["MessageSeverity"];
+        switch (severity)
+        {
+            case MessageSeverity.Ok: color = "green"; break;
+            case MessageSeverity.Warning: color = "orange"; break;
+            case MessageSeverity.Error: color = "red"; break;
+        }
+    }
+}
+
+<h2 class="text-center">Villain list</h2>
+
+@if (ViewData["Initial message"] != null)
+{
+    <h3>@ViewData["Initial message"]</h3>
+}
+
+@if(TempData["MessageText"] != null)
+{
+    <p id="feedback-message" style="color: @color;">@TempData["MessageText"]</p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>killed</th>
+            <th>kidnapped</th>
+            <th>nemesis</th>
+            <th colspan="2"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var villain in Model)
+        {
+            <tr>
+                <td>@villain.VillainName</td>
+                <td>@villain.KilledPeople</td>
+                <td>@villain.KidnappedPeople</td>
+                <td>@villain.Nemesis</td>
+                <td><a asp-action="Edit" asp-route-id="@villain.Id">edit</a></td>
+                <td><a asp-action="Delete" asp-route-id="@villain.Id" class="text-danger">delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-primary" asp-controller="Villains" asp-action="Add">Add Villain</a>

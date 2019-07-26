@@ -1,0 +1,26 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+ul {
+    font-size: 1.5em;
+}
+
+span.validation {
+  color: red;
+}
+
+.divFixed {
+    max-width: 700px;
+   display: inline-block;
+}
+
+.centered{
+    text-align:center;
+}

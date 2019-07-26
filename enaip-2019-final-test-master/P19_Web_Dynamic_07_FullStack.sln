@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P19_Web_Dynamic_07_FullStack_ANTONELLI", "P19_Web_Dynamic_07_FullStack\P19_Web_Dynamic_07_FullStack_ANTONELLI.csproj", "{BA834CF2-2942-4694-84AD-ECE404362230}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA834CF2-2942-4694-84AD-ECE404362230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA834CF2-2942-4694-84AD-ECE404362230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA834CF2-2942-4694-84AD-ECE404362230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA834CF2-2942-4694-84AD-ECE404362230}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8724A10-EDF2-4189-9A3E-D7AE1C824956}
+	EndGlobalSection
+EndGlobal
