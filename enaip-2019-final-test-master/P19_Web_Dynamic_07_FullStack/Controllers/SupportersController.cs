@@ -8,6 +8,7 @@ using P19_Web_Dynamic_07_FullStack.Controllers;
 using P19_Web_Dynamic_07_FullStack.DataAccess;
 using P19_Web_Dynamic_07_FullStack.Infrastructure;
 using P19_Web_Dynamic_07_FullStack.Infrastructure.Exceptions;
+using P19_Web_Dynamic_07_FullStack.ViewModels;
 using P19_Web_Dynamic_07_FullStack_ANTONELLI.ViewModels;
 
 namespace P19_Web_Dynamic_07_FullStack_ANTONELLI.Controllers

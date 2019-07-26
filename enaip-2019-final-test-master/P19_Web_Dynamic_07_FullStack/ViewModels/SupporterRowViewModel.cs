@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace P19_Web_Dynamic_07_FullStack_ANTONELLI.ViewModels
+namespace P19_Web_Dynamic_07_FullStack.ViewModels
 {
     public class SupporterRowViewModel
     {
